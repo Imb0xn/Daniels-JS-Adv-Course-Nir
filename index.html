@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Testing</title>
+</head>
+
+<body>
+    <h1>Nir Imber</h1>
+
+
+    <script>
+        let ctrlPressed = false;
+        let bPressed = false;
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Control') {
+                ctrlPressed = true;
+            }
+            if (event.key === 'b' || event.key === 'B') {
+                bPressed = true;
+            }
+
+            if (ctrlPressed && bPressed) {
+                alert("You found the secret key binding");
+                ctrlPressed = false;
+                bPressed = false;
+            }
+        });
+
+        document.addEventListener('keyup', function (event) {
+            if (event.key === 'Control') {
+                ctrlPressed = false;
+            }
+            if (event.key === 'b' || event.key === 'B') {
+                bPressed = false;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
